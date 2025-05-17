@@ -40,7 +40,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/frontend
+
+/frontend/.next
+/frontend/app/candies
+/frontend/node_modules
+/frontend/public
+/frontend/.env.local
+
+
+
 /server/node_modules
 /server/queries.js
 server/.env
