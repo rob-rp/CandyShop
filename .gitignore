@@ -42,8 +42,7 @@ next-env.d.ts
 
 /frontend
 /server/node_modules
-/server/seed.js
 /server/queries.js
-server/server.js
 server/.env
 /.env.local
+README.md
