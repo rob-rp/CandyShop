@@ -42,7 +42,7 @@ next-env.d.ts
 
 
 /frontend/.next
-/frontend/app/candies/\[id\]/
+
 /frontend/node_modules
 /frontend/public
 /frontend/.env.local
