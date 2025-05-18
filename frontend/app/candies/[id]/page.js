@@ -37,7 +37,7 @@ const updateQuantity = async (changeAmount) => {
 
     try {
 
-      const res = await fetch(`http://localhost:8000/candies/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/candies/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
