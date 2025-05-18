@@ -9,7 +9,7 @@ export default function AllCandiesPage() {
   useEffect(() => {
     const fetchCandies = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/candies`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/candies`)
         const data = await res.json()
         setCandies(data)
       } catch (err) {

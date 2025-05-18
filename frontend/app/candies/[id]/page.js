@@ -10,7 +10,7 @@ export default function SingleCandyPage() {
   useEffect(() => {
     const fetchCandy = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/candies/${id}`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/candies/${id}`)
         const data = await res.json()
         setCandy(data)
       } catch (err) {
