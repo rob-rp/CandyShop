@@ -1,4 +1,4 @@
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 
 export default async function Home() {
   const { userId } = await auth()
@@ -14,16 +14,16 @@ export default async function Home() {
         </main>
       </div>
     );
-  }
-
-    return (
-      <div className="bg-[url('/CandyMix2.png')] bg-cover bg-no-repeat bg-center grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-[36px] row-start-2 items-center sm:items-start">
-          <div className="bg-black p-6 rounded">
-            <h1 className="text-5xl font-bold text-white">Welcome to Goodie Bag</h1>
-            <p className="text-2xl text-white">Your one-stop shop for all things candy!</p>
-          </div>
-        </main>
-      </div>
-    );
+  } else {  
+      return (
+        <div className="bg-[url('/CandyMix2.png')] bg-cover bg-no-repeat bg-center grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+          <main className="flex flex-col gap-[36px] row-start-2 items-center sm:items-start">
+            <div className="bg-black p-6 rounded">
+              <h1 className="text-5xl font-bold text-white">Welcome to Goodie Bag</h1>
+              <p className="text-2xl text-white">Your one-stop shop for all things candy!</p>
+            </div>
+          </main>
+        </div>
+      );
+    }
 }
