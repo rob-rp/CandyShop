@@ -68,8 +68,8 @@ const updateQuantity = async (changeAmount) => {
           <p className="mb-2">{candy.description}</p>
           <p className="font-semibold">You Have {candy.quantity} bags of {candy.name}.</p>
           <div className="mt-4 space-x-2">
-            <button onClick={() => updateQuantity(1)} className="px-4 py-2 bg-green-500 text-white rounded">Add Candy</button>
-            <button onClick={() => updateQuantity(-1)} className="px-4 py-2 bg-red-500 text-white rounded">Give Candy</button>
+            <button onClick={() => updateQuantity(1)} className="hover:cursor-pointer px-4 py-2 bg-green-500 text-white rounded">Add Candy</button>
+            <button onClick={() => updateQuantity(-1)} className="hover:cursor-pointer px-4 py-2 bg-red-500 text-white rounded">Give Candy</button>
           </div>
         </div>
       </div>
@@ -83,8 +83,8 @@ const updateQuantity = async (changeAmount) => {
         <p className="mb-2">{candy.description}</p>
         <p className="font-semibold">You Have {candy.quantity} bags of {candy.name}.</p>
         <div className="mt-4 space-x-2">
-          <button onClick={() => updateQuantity(1)} className="px-4 py-2 bg-green-500 text-white rounded">Add Candy</button>
-          <button onClick={() => updateQuantity(-1)} className="px-4 py-2 bg-red-500 text-white rounded">Give Candy</button>
+          <button onClick={() => updateQuantity(1)} className="hover:cursor-pointer px-4 py-2 bg-green-500 text-white rounded">Add Candy</button>
+          <button onClick={() => updateQuantity(-1)} className="hover:cursor-pointer px-4 py-2 bg-red-500 text-white rounded">Give Candy</button>
         </div>
       </div>
     </div>

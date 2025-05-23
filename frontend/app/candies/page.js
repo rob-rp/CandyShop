@@ -25,6 +25,21 @@ export default function AllCandiesPage() {
     fetchCandies()
   }, [])
 
+  // update state to show changes in database?
+  const handleDelete = async (id) => {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/candies/${id}`, {
+        method: 'DELETE',
+      });
+
+      setCandies(candies.filter(candy => candy.id !== id));
+      // setCandies((prevCandies) => prevCandies.filter((candy) => candy.id !== id));
+    } catch (err) {
+      console.error(err);
+      alert('Error deleting candy');
+    }
+  };
+
 
   if (!userId) {
     return (
@@ -50,8 +65,18 @@ export default function AllCandiesPage() {
           <Link href={`/candies/${candy.id}`}>
             <img src={candy.imageurl} alt={candy.name} className="w-48 h-48 object-cover rounded hover:opacity-90 transition" />
           </Link>
+          <button className="bg-red-600 text-white px-4 py-2 rounded hover:cursor-pointer" onClick={() => handleDelete(candy.id)}>
+            Delete Candy
+          </button>
         </div>
       ))}
+      <div className="max-w-md mx-auto p-4">
+        <Link href="/candies/add">
+          <button className="bg-green-600 text-white px-4 py-2 hover:cursor-pointer rounded hover:bg-blue-700 transition">
+            Add More Candy
+          </button>
+        </Link>
+      </div>
     </div>
   )
   }
