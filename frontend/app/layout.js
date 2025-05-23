@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider publishableKey= {process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <nav className="bg-pink-300 p-4 text-white flex justify-between items-center">
+          <nav className="bg-pink-300 py-2 px-4 text-white flex justify-between items-center">
             <h2 className="text-xl font-bold">Goodie Bag</h2>
             <div className="space-x-4">
               <Link href="/">Home Page</Link>
