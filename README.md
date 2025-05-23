@@ -21,3 +21,5 @@ Welcome To Goodie Bag App
    - Candy detail page, to See detailed info and update your candy stash.
   
    - Quantity management: Add or give away candy bags, updating your inventory live.
+
+   - The ability to add and delete candies.

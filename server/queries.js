@@ -55,9 +55,45 @@ const updateCandy = (req, res) => {
 };
 
 //deleteCandy
+const deleteCandy = (req, res) => {
+  const id = parseInt(req.params.id);
+  pool.query(
+    'DELETE FROM candies WHERE id = $1 RETURNING *',
+    [id],
+    (error, results) => {
+      if (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Database error' });
+      }
+      if (results.rows.length === 0) {
+        return res.status(404).json({ error: 'Candy not found' });
+      }
+      res.status(200).json({ message: 'Candy deleted', candy: results.rows[0] });
+    }
+  );
+};
+
+const createCandy = (req, res) => {
+  const { name, description, quantity } = req.body;
+  const imageurl = 'https://picsum.photos/200?blur'
+
+  pool.query(
+    'INSERT INTO candies (name, description, quantity, imageurl) VALUES ($1, $2, $3, $4) RETURNING *',
+    [name, description, quantity, imageurl],
+    (error, results) => {
+      if (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Database error' });
+      }
+      res.status(201).json(results.rows[0]);
+    }
+  );
+};
 
 module.exports = {
   getAllCandies,
   getCandyById,
   updateCandy,
+  deleteCandy,
+  createCandy
 };

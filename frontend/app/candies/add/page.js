@@ -26,6 +26,10 @@ export default function NewCandyPage() {
         }),
       })
 
+      setCandyName('')
+      setCandyDescription('')
+      setCandyQuantity(1)
+
       router.push('/candies')
     } catch (err) {
       console.error(err)

@@ -21,6 +21,8 @@ app.get('/', (req, res) => {
 app.get('/candies', db.getAllCandies);
 app.get('/candies/:id', db.getCandyById);
 app.put('/candies/:id', db.updateCandy);
+app.post('/candies', db.createCandy);
+app.delete('/candies/:id', db.deleteCandy);
 
 
 
